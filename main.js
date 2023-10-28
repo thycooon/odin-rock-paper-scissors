@@ -59,7 +59,7 @@ function game() {
             console.log("Error occured while playing round (continue to next round).");
         }
         roundCount++
-        console.log(`Scores: 💻: ${computerScore}|👤: ${playerScore}`)
+        console.log(`Scores:  💻: ${computerScore}  ||  👤: ${playerScore}`)
     }
 
     // presenting result
@@ -67,7 +67,7 @@ function game() {
     if(computerScore === 5){
         console.log(`Aww. Computer won the game. (${ties} ties.)`)
     } else if (playerScore){
-        console.log(`Congratulations you won the game. (${ties} ties.)`)
+        console.log(`🎉 Congratulations, you won the game. (${ties} ties.)`)
     }
 
     // next round?
