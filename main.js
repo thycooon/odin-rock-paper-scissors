@@ -7,6 +7,7 @@ function getPlayerChoice() {
     let playerInput = prompt("Enter selection (rock, paper, scissors)");
     // format input
     playerInput = playerInput.toLowerCase();
+    return playerInput
 }
 
 function playRound(playerSelection, computerSelection){
@@ -20,9 +21,12 @@ function playRound(playerSelection, computerSelection){
             ["paper","rock"]
         ]
         let winnerEval = winningConditions.some(condition => {playerSelection === condition[0] && computerSelection === condition[1]})
-        console.log(winnerEval ? "Hooray! You won." : "Computer won. Best luck next time!")
+        let message = winnerEval 
+            ? `You won. (${playerSelection} > ${computerSelection})`
+            : `Computer won. (${playerSelection} > ${computerSelection})`
+        console.log(`You chose: ${playerSelection} ; Computer chose: ${computerSelection} | ` + message)
+        return winnerEval ? "player" : "computer";
     }    
-    return winnerEval ? "player" : "computer";
 }
 
 function game() {
