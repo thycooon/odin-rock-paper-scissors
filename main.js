@@ -1,6 +1,7 @@
 function getComputerChoice() {
     const CHOICES = ["rock","paper","scissors"];
-    return CHOICES[Math.floor(Math.random() * 3)]
+    let choice = CHOICES[Math.floor(Math.random() * 3)];
+    return choice
 }
 
 function getPlayerChoice() {
@@ -23,10 +24,10 @@ function playRound(playerSelection, computerSelection){
         let winnerEval = winningConditions.some(condition => {playerSelection === condition[0] && computerSelection === condition[1]})
         console.log(`%cYou: %c${playerSelection} %c| Computer: %c${computerSelection}`,"color:lightgrey","color:white","color:ligth-grey","color:white")
         if (winnerEval){
-            console.log(`🏳 %c- 👤 %cYou won%c.      (${playerSelection} > ${computerSelection})`,"color:lightgrey","color: green","color:lightgrey")
+            console.log(`👤 %c- %cYou won%c.      (${playerSelection} > ${computerSelection})`,"color:lightgrey","color: green","color:lightgrey")
 
         } else {
-            console.log(`🏴  %c- 💻 %cComputer won%c. (${playerSelection} > ${computerSelection})`,"color:lightgrey","color: red","color:lightgrey")
+            console.log(`💻 %c- %cComputer won%c. (${playerSelection} > ${computerSelection})`,"color:lightgrey","color: red","color:lightgrey")
 
         }
         return winnerEval ? "player" : "computer";
@@ -39,7 +40,7 @@ function game() {
     let ties = 0;
     let roundCount = 1;
     while (computerScore < 5 && playerScore < 5){
-        console.log(`-------Round ${roundCount}-------`)
+        console.log(`------------ Round ${roundCount<10 ? "0"+roundCount : roundCount} -------------`)
         let roundResult = playRound(getPlayerChoice(),getComputerChoice())
         if (roundResult === "tie"){
             ties++;
@@ -50,8 +51,8 @@ function game() {
         } else {
             console.log("Error occured while playing round (continue to next round).");
         }
-        console.log("----------------------")
         roundCount++
+        console.log(`Scores: 💻: ${computerScore}|👤: ${playerScore}`)
     }
     if(computerScore === 5){
         console.log(`Aww. Computer won the game. (${ties} ties.)`)
