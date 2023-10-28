@@ -8,6 +8,8 @@ function getPlayerChoice() {
     let playerInput = prompt("Enter selection (rock, paper, scissors)");
     // format input
     playerInput = playerInput.toLowerCase();
+    // evaluate input
+    if(playerInput !== playerInput.some(input => ["rock","paper","scissors"].includes(input)))
     return playerInput
 }
 
