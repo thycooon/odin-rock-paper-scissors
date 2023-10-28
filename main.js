@@ -9,7 +9,10 @@ function getPlayerChoice() {
     // format input
     playerInput = playerInput.toLowerCase();
     // evaluate input
-    if(playerInput !== playerInput.some(input => ["rock","paper","scissors"].includes(input)))
+    if(!    ["rock","paper","scissors"].includes(playerInput)){
+        console.log("Invalid input.")
+        getPlayerChoice()
+    }
     return playerInput
 }
 
@@ -23,7 +26,7 @@ function playRound(playerSelection, computerSelection){
             ["scissors","paper"],
             ["paper","rock"]
         ]
-        let winnerEval = winningConditions.some(condition => {playerSelection === condition[0] && computerSelection === condition[1]})
+        let winnerEval = winningConditions.some(condition => playerSelection === condition[0] && computerSelection === condition[1])
         console.log(`%cYou: %c${playerSelection} %c| Computer: %c${computerSelection}`,"color:lightgrey","color:white","color:ligth-grey","color:white")
         if (winnerEval){
             console.log(`👤 %c- %cYou won%c.      (${playerSelection} > ${computerSelection})`,"color:lightgrey","color: green","color:lightgrey")
