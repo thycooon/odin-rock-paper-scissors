@@ -44,6 +44,8 @@ function game() {
     let playerScore = 0;
     let ties = 0;
     let roundCount = 1;
+
+    // game evaulation
     while (computerScore < 5 && playerScore < 5){
         console.log(`------------ Round ${roundCount<10 ? "0"+roundCount : roundCount} -------------`)
         let roundResult = playRound(getPlayerChoice(),getComputerChoice())
@@ -59,9 +61,17 @@ function game() {
         roundCount++
         console.log(`Scores: 💻: ${computerScore}|👤: ${playerScore}`)
     }
+
+    // presenting result
+    console.log(`------------ Summary -------------`)
     if(computerScore === 5){
         console.log(`Aww. Computer won the game. (${ties} ties.)`)
     } else if (playerScore){
         console.log(`Congratulations you won the game. (${ties} ties.)`)
+    }
+
+    // next round?
+    if(confirm("Wanna play again?")) {
+        game()
     }
 }
