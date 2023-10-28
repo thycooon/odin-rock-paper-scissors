@@ -21,10 +21,14 @@ function playRound(playerSelection, computerSelection){
             ["paper","rock"]
         ]
         let winnerEval = winningConditions.some(condition => {playerSelection === condition[0] && computerSelection === condition[1]})
-        let message = winnerEval 
-            ? `You won. (${playerSelection} > ${computerSelection})`
-            : `Computer won. (${playerSelection} > ${computerSelection})`
-        console.log(`You chose: ${playerSelection} ; Computer chose: ${computerSelection} | ` + message)
+        console.log(`%cYou: %c${playerSelection} %c| Computer: %c${computerSelection}`,"color:lightgrey","color:white","color:ligth-grey","color:white")
+        if (winnerEval){
+            console.log(`🏳 %c- 👤 %cYou won%c.      (${playerSelection} > ${computerSelection})`,"color:lightgrey","color: green","color:lightgrey")
+
+        } else {
+            console.log(`🏴  %c- 💻 %cComputer won%c. (${playerSelection} > ${computerSelection})`,"color:lightgrey","color: red","color:lightgrey")
+
+        }
         return winnerEval ? "player" : "computer";
     }    
 }
@@ -33,7 +37,9 @@ function game() {
     let computerScore = 0;
     let playerScore = 0;
     let ties = 0;
+    let roundCount = 1;
     while (computerScore < 5 && playerScore < 5){
+        console.log(`-------Round ${roundCount}-------`)
         let roundResult = playRound(getPlayerChoice(),getComputerChoice())
         if (roundResult === "tie"){
             ties++;
@@ -44,6 +50,8 @@ function game() {
         } else {
             console.log("Error occured while playing round (continue to next round).");
         }
+        console.log("----------------------")
+        roundCount++
     }
     if(computerScore === 5){
         console.log(`Aww. Computer won the game. (${ties} ties.)`)
