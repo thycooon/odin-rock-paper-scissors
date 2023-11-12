@@ -13,32 +13,78 @@
             <span class="logo-slogan">A <a href="https://www.theodinproject.com/paths/foundations/courses/foundations"><em>The Odin Project - Foundations</em></a> exercise.</span>
         </div>
         <ul>
-            <li><button id="home">Home</button></li>
             <li><button id="newGame">New game</button></li>
-            <li><button id="history">History</button></li>
+            <li><button id="home">Home</button></li>
         </ul>
     </header>
     <main>
-        <div class="wrapper">
-            <button class="choice" id="rock">
-                <div class="icon-container">
+        <section class="page home">
+            <div class="left">
+                <div class="box rules">
+                    <div class="title">
+                        <h2>Rules</h2>
+                    </div>
+                    <p class="intro">Rock Paper Scissors is a game where two players simultaneously choose one of three objects - rock, paper, or scissors - to determine a winner.</p>
+                    <h3 class="title">Order</h3>
+                    <!-- include img of what beats what here-->
+                </div>
+                <div class="box game">
+                    <div class="title">
+                        <h2>Game</h2>
+                    </div>
+                    <div class="content">
+                        <div class="gameRules">
+                            <label for="roundsToWin">Rounds to win</label>
+                            <input type="number" name="roundsToWin" id="roundsToWin" min="1" max="100" value="5">
+                        </div>
+                    </div>
+                    <button class="startGame" >Start game</button>
+                </div>
+            </div>
+            <div class="right history">
+                <div class="title">
+                    <h2>History</h2>
+                </div>
+                <div class="games">
+                    <div class="game">
+                        <span class="winner">
+                            <div class="winner-img"></div>
+                            <div class="winner-name"></div>
+                        </span>
 
+                    </div>
                 </div>
-                <span>Rock</span>
-            </button>
-            <button class="choice" id="paper">
-                <div class="icon-container">
-                    
-                </div>
-                <span>Paper</span>
-            </button>
-            <button class="choice" id="scissors">
-                <div class="icon-container">
-                    
-                </div>
-                <span>Scissors</span>
-            </button>
-        </div>
+            </div>
+        <!-- </section>
+        <section class="page game">
+            <div class="score">
+
+            </div>
+            <div class="wrapper">
+                <button class="choice" id="rock">
+                    <div class="icon-container">
+    
+                    </div>
+                    <span>Rock</span>
+                </button>
+                <button class="choice" id="paper">
+                    <div class="icon-container">
+                        
+                    </div>
+                    <span>Paper</span>
+                </button>
+                <button class="choice" id="scissors">
+                    <div class="icon-container">
+                        
+                    </div>
+                    <span>Scissors</span>
+                </button>
+            </div>
+        </section>
+        <section class="page summary">
+
+        </section> -->
+     
     </main>
     <footer>
         <a href="https://github.com/thycooon" target="_blank">

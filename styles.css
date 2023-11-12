@@ -9,6 +9,7 @@
     --color-medium2: #ab6701;
     --color-darker: #505168;
     --color-dark: #27233a;
+    --color-border: rgba(153, 153, 153, 0.7);
 }
 
 .icon-container {
@@ -50,10 +51,10 @@ header {
     width: 100%;
     max-height: 15%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     padding: 20px;
-    border-bottom: 3px solid rgba(153, 153, 153, 0.7);
+    border-bottom: 3px solid var(--color-border);
 }
 
 .logo > .logo-name {
@@ -72,7 +73,7 @@ header {
 }
 
 header > ul {
-    width: 50%;
+    width: 30%;
     height: 100%;
     display: flex;
     justify-content: space-around;
@@ -115,7 +116,99 @@ main {
     width: 100%;
     height: 70%;
     flex: 1 0 auto;
-    
+    padding: .3vh;
+}
+
+.page.home {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1vw;
+}
+
+.page.home > .left,
+.page.home > .right {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh;
+}
+
+.page.home > .left > .rules,
+.page.home > .left > .game,
+.page.home > .right{
+    padding: 1rem;
+    border: 3px solid var(--color-border);
+    border-radius: 20px;
+    color: var(--color-medium);
+    font-family: 'Arial',sans-serif;
+    font-size: 1.5rem;
+}
+
+.page.home > .left > .rules {
+    height: 75%
+}
+
+.page.home > .left > .game {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 25%;
+}
+
+.page.home .title {
+    width: 100%;
+    max-height: 20%;
+    display: flex;
+    align-items: center;
+    color: var(--color-highlight);
+    font-family: 'Times New Roman',serif;
+    font-size: 1.5rem;
+}
+
+.page.home > .left .game .content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+
+.page.home .gameRules {
+    width: 50%;
+    height: 100%; 
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.page.home .gameRules > input {
+    height: 100%;
+    padding-left: 1rem;
+    outline: none;
+    border: 3px solid var(--color-darker);
+    border-radius: 10px;
+    color: var(--color-highlight);
+    background-color: transparent;
+    font-size: 1.5rem;
+}
+
+.page.home .startGame{
+    padding: .8rem;
+    border: 3px solid var(--color-medium2);
+    border-radius: 20px;
+    color: var(--color-light);
+    background-color: transparent;
+    font-size: 1.5rem;
+    transition: border-color 250ms; 
+}
+
+.page.home .startGame:hover {
+    border-color: var(--color-highlight);
+    cursor: pointer;
 }
 
 .wrapper {
@@ -147,7 +240,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: .6vh;
-    border-top: 3px solid rgba(153, 153, 153, 0.7);
+    border-top: 3px solid var(--color-border);
     color: var(--color-medium);
     font-family: 'Arial', sans-serif;
     font-size: 1.4rem;
