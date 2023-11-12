@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    /* --color-highlight: #dcc48e;
+    --color-ligth: #eaefd3;
+    --color-medium: #ab6701;
+    --color-dark: #240036; */
+    --color-highlight: #dcc48e;
+    --color-light: #eaefd3;
+    --color-medium: #b3c0a4;
+    --color-darker: #505168;
+    --color-dark: #27233a;
+
+
+}
+
+.icon {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 49%, var(--color-darker) 49% 51%, transparent 51%) , linear-gradient(-45deg, transparent 49%, var(--color-darker) 49% 51%, transparent 51%);
+    background-size: 4em 4em;
+    background-color: var(--color-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid var(--color-darker);
+}
+
+body {
+    width: 60%;
+    height: 80%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10vh;
+    background-color: #232323;
+    border: 3px solid var(--color-darker);
+    border-radius: 20px;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 3px solid rgba(153, 153, 153, 0.7);
+}
+
+.logo > .logo-name {
+    font-size: 70px;
+    color: var(--color-light);
+}
+
+.logo > .logo-slogan {
+    font-size: 30px;
+    color: var(--color-darker);
+}
+
+.logo > .logo-slogan > a {
+    color: var(--color-medium);
+    text-decoration: none;
+}
+
+header > ul {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2vw;
+    list-style-type: none;
+}
+
+header > ul > li {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+}
+
+header > ul > li > button, 
+header > ul > li > a{
+    width: 100%;
+    height: 80%;
+
+}
+
+main {
+    width: 100%;
+    height: 80%;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 2vw;
+}
+
+.wrapper > button {
+    width: 25%;
+    height: 70%;
+    border: 3px solid #ab6701;
+    border-radius: 20px;
+    background: transparent;
+    outline: none;
+    transition: transform 200ms;
+}
+
+.wrapper > button:hover {
+    transform: scale(1.05);
+}
