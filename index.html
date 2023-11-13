@@ -12,7 +12,7 @@
             <h1 class="logo-name">Rock paper scissors</h1>
             <span class="logo-slogan">A <a href="https://www.theodinproject.com/paths/foundations/courses/foundations"><em>The Odin Project - Foundations</em></a> exercise.</span>
         </div>
-        <ul>
+        <ul class="navButtons">
             <li><button id="newGame">New game</button></li>
             <li><button id="home">Home</button></li>
         </ul>
@@ -20,92 +20,67 @@
     <main>
         <section class="page home">
             <div class="left">
+                <div class="box game">
+                    <div class="title">
+                        <h2>Game settings</h2>
+                    </div>
+                    <div class="content">
+                        <div class="gameRules">
+                            <label for="roundsToWin">Score to win</label>
+                            <input type="number" name="roundsToWin" id="roundsToWin" min="1" max="100" value="5">
+                        </div>
+                    </div>
+                </div>
+                <button class="startGame" >Start game</button>
                 <div class="box rules">
                     <div class="title">
                         <h2>Rules</h2>
                     </div>
                     <p class="intro">Rock Paper Scissors is a game where two players simultaneously choose one of three objects - rock, paper, or scissors - to determine a winner.</p>
-                    <h3 class="title">Order</h3>
+                    <h3 class="title">Who wins?</h3>
                     <!-- include img of what beats what here-->
                 </div>
-                <div class="box game">
-                    <div class="title">
-                        <h2>Game</h2>
-                    </div>
-                    <div class="content">
-                        <div class="gameRules">
-                            <label for="roundsToWin">Rounds to win</label>
-                            <input type="number" name="roundsToWin" id="roundsToWin" min="1" max="100" value="5">
-                        </div>
-                    </div>
-                    <button class="startGame" >Start game</button>
-                </div>
+
+                
             </div>
             <div class="right history">
                 <div class="title">
                     <h2>History</h2>
                 </div>
+                <div class="game">
+                    <span class="timestamp">Date</span>
+                    <span class="stats">Stats</span>
+                </div>
                 <div class="games">
                     <div class="game">
-                        <span class="date">12.11.2023</span>
-                        <span class="winner">Computer</span>
-                        <span class="score">
-                            <span class="player">
-                                <span class="player-icon" title="Player">👤:</span>
-                                <span class="player-score">3</span>
+                        <span class="timestamp">
+                            <div class="date">12.11.2023</div>
+                            <div class="time">4:51 PM</div>
+                        </span>
+                        <span class="stats">
+                            <span class="winner" title="winner">
+                                <div class="player-icon">🏆</div>
+                                <div class="winner-name">💻</div>
                             </span>
-                            <span class="computer">
-                                <span class="computer-icon" title="Computer">💻:</span>
-                                <span class="computer-score">5</span>
-
+                            <span class="player" title="player score">
+                                <div class="player-icon">👤</div>
+                                <div class="player-score">3</div>
                             </span>
-                            <span class="ties">
-                                <span class="tie-icon" title="Ties">💻|👤:</span>
-                                <span class="tie-score">2</span>
-
+                            <span class="computer" title="computer score">
+                                <div class="computer-icon">💻</div>
+                                <div class="computer-score">5</div>
+                            </span>
+                            <span class="ties" title="ties">
+                                <div class="ties-icon">🤝</div>
+                                <div class="ties-score">2</div>
+                            </span>
+                            <span class="totalgames" title="total games played">
+                                <div class="totalgames-icon">🕹</div>
+                                <div class="totalgames-score">10</div>
                             </span>
                         </span>
                     </div>
-                    <div class="game">
-                        <span class="date">12.11.2023</span>
-                        <span class="winner">Computer</span>
-                        <span class="score">
-                            <span class="player">
-                                <span class="player-icon" title="Player">👤:</span>
-                                <span class="player-score">3</span>
-                            </span>
-                            <span class="computer">
-                                <span class="computer-icon" title="Computer">💻:</span>
-                                <span class="computer-score">5</span>
 
-                            </span>
-                            <span class="ties">
-                                <span class="tie-icon" title="Ties">💻|👤:</span>
-                                <span class="tie-score">2</span>
-
-                            </span>
-                        </span>
-                    </div>
-                    <div class="game">
-                        <span class="date">12.11.2023</span>
-                        <span class="winner">Computer</span>
-                        <span class="score">
-                            <span class="player">
-                                <span class="player-icon" title="Player">👤:</span>
-                                <span class="player-score">3</span>
-                            </span>
-                            <span class="computer">
-                                <span class="computer-icon" title="Computer">💻:</span>
-                                <span class="computer-score">5</span>
-
-                            </span>
-                            <span class="ties">
-                                <span class="tie-icon" title="Ties">💻|👤:</span>
-                                <span class="tie-score">2</span>
-
-                            </span>
-                        </span>
-                    </div>
                 </div>
             </div>
         <!-- </section>
