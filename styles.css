@@ -158,7 +158,21 @@ header > ul > li > button:hover {
         flex-direction: column;
         justify-content: flex-start !important;        
         align-items: center;
+        padding-right: .7rem;
         overflow-y: scroll;
+    }
+    .page.home::-webkit-scrollbar {
+        width: 15px;
+        background: var(--color-darker);
+        border-radius:10px;
+    }
+    .page.home::-webkit-scrollbar-thumb {
+        background: var(--color-medium2);
+        border: 2px solid var(--color-dark);
+        border-radius: 10px;
+    }
+    .page.home::-webkit-scrollbar-thumb:active {
+        background: var(--color-highlight);
     }
     .page.home > .left,
     .page.home > .right {
@@ -167,6 +181,13 @@ header > ul > li > button:hover {
     .page.home > .left {
         height: unset;
         margin-bottom: 1rem;
+    }
+    .page.home > .left > .game {
+        height: 30% !important ;
+        gap: 2rem !important;
+    }
+    .page.home > .left .game .content {
+        height: 10vh !important;
     }
     .page.home > .left > * {
         padding: 2rem !important;
@@ -276,6 +297,7 @@ main {
     background-color: transparent;
     font-size: 1.5rem;
     font-weight: bold;
+    user-select: none;
     transition: border-color 250ms; 
 }
 
@@ -289,17 +311,22 @@ main {
     display: flex;
     flex-direction: column;
     overflow: auto;
+    position: relative;
 }
+
+.page.home .games > .game:first-child {
+    position: fixed;
+    background-color: var(--color-dark);
+    top: 0;
+  }
 
 .page.home .games::-webkit-scrollbar {
     width: 15px;
     background: var(--color-darker);
-    border-radius:10px;
 }
 .page.home .games::-webkit-scrollbar-thumb {
     background: var(--color-medium2);
     border: 2px solid var(--color-dark);
-    border-radius: 10px;
 }
 .page.home .games::-webkit-scrollbar-thumb:active {
     background: var(--color-highlight);
@@ -307,6 +334,10 @@ main {
 
 .page.home > .right {
     gap: 0;
+}
+
+.page.home > .right > .game {
+   padding-right: 2rem !important;
 }
 
 .page.home > .right > .title{
@@ -323,6 +354,10 @@ main {
     border-right: 3px solid var(--color-border);
     border-bottom: 3px solid var(--color-border);
     user-select: none;
+}
+
+.page.home .right .game:first-child {
+    position: sticky;
 }
 
 .page.home .right .game > * {
