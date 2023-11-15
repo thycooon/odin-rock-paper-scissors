@@ -203,7 +203,7 @@ header > ul > li > button:hover {
 
 main {
     width: 100%;
-    height: 70%;
+    height: 78%;
     padding: .3vh;
 }
 
@@ -416,7 +416,7 @@ main {
 }
 
 footer {
-    height: 6%;
+    height: 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
