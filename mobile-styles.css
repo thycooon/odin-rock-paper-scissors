@@ -39,11 +39,14 @@
         padding: 2vw;
         font-size: 25px;
     }
+    main {
+        display: flex;
+        justify-content: center;
+    }
     .page.home {
         width: 90%;
         height: 100%;
         flex-direction: column;
-        justify-content: flex-start !important;        
         align-items: center;
         /* padding-right: .7rem; */
         overflow-y: scroll;
@@ -93,7 +96,7 @@
     header {
         flex-direction: column;
         gap: 1vh;
-        height: 30%;
+        height: 20%;
     }
     .logo > .logo-name {
         font-size: 60px;
@@ -111,7 +114,7 @@
         font-size: 25px;
     }
     main {
-        height: 60%;
+        height: 70%;
     }
     .copyright-text {
         display: none;

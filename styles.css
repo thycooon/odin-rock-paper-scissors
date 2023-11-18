@@ -37,18 +37,19 @@ html {
 
 body {
     width: 65%;
-    height: 95%;
-    padding: 1rem;
+    height: 100%;
+    padding: 0 1rem;
     display: flex;
     flex-direction: column;
     gap: 2vh;
     background-color: var(--color-dark);
-    border: 3px solid var(--color-darker);
-    border-radius: 20px;
+    border-left: 3px solid var(--color-darker);
+    border-right: 3px solid var(--color-darker);
 }
 
 header {
     width: 100%;
+    height: 20%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -96,7 +97,7 @@ header > ul > li {
 
 header > ul > li > button {
     width: 100%;
-    height: 80%;
+    height: 60%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -115,128 +116,9 @@ header > ul > li > button:hover {
     
 }
 
-@media (max-width: 1590px) {
-    body {
-        width: 80%;
-    }
-    .logo > .logo-name {
-        font-size: 60px;
-    }
-    .logo > .logo-slogan {
-        font-size: 24px;
-    }
-    header > ul > li > button {
-        padding: 2vw;
-        font-size: 25px;
-    }
-
-}
-
-@media (max-width: 1250px) {
-    body {
-        width: 100%;
-    }
-    header > ul {
-        width: 40%;
-    }
-    header > ul > li > button {
-        padding: 1vw .5vw;
-        font-size: 25px;
-    }
-}
-
-@media (max-width: 950px) {
-    .logo > .logo-name {
-        font-size: 50px;
-    }
-    .logo > .logo-slogan {
-        font-size: 22px;
-    }
-    header > ul > li > button {
-        padding: 2vw;
-        font-size: 25px;
-    }
-    .page.home {
-        width: 90%;
-        height: 100%;
-        flex-direction: column;
-        justify-content: flex-start !important;        
-        align-items: center;
-        padding-right: .7rem;
-        overflow-y: scroll;
-    }
-    .page.home::-webkit-scrollbar {
-        width: 15px;
-        background: var(--color-darker);
-        border-radius:10px;
-    }
-    .page.home::-webkit-scrollbar-thumb {
-        background: var(--color-medium2);
-        border: 2px solid var(--color-dark);
-        border-radius: 10px;
-    }
-    .page.home::-webkit-scrollbar-thumb:active {
-        background: var(--color-highlight);
-    }
-    .page.home > .left,
-    .page.home > .right {
-        width: 100% !important;
-    }
-    .page.home > .left {
-        height: unset;
-        margin-bottom: 1rem;
-    }
-    .page.home > .left > .game {
-        height: 30% !important ;
-        gap: 2rem !important;
-    }
-    .page.home > .left .game .content {
-        height: 10vh !important;
-    }
-    .page.home > .left > * {
-        padding: 2rem !important;
-    }
-    .page.home .games,
-    .page.home .games > .game:first-child {
-        padding: 0 !important;
-    }
-    .page.home .startGame{
-        font-size: 2rem !important;
-    }
-}
-
-@media (max-width: 840px) {
-    header {
-        flex-direction: column;
-        gap: 1vh;
-    }
-    .logo > .logo-name {
-        font-size: 60px;
-    }
-    .logo > .logo-slogan {
-        font-size: 24px;
-    }
-    .navButtons {
-        width: 70%;
-        gap: max(10%);
-    }
-    .navButtons button {
-        height: 100%;
-        padding: 2vw;
-        font-size: 25px;
-    }
-}
-
-@media (max-width: 580px) {
-    .copyright-text {
-        display: none;
-    }
-}
-
 main {
     width: 100%;
-    height: 78%;
-    padding: .3vh;
+    height: 75%;
 }
 
 .page.home {
@@ -448,6 +330,7 @@ main {
 }
 
 footer {
+    flex-grow: 1;
     height: 5%;
     display: flex;
     justify-content: space-between;
