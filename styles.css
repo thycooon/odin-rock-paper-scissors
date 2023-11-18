@@ -201,6 +201,14 @@ header > ul > li > button:hover {
     }
 }
 
+
+
+@media (max-width: 580px) {
+    .copyright-text {
+        display: none;
+    }
+}
+
 main {
     width: 100%;
     height: 78%;
@@ -279,7 +287,7 @@ main {
 }
 
 .page.home .gameRules > input {
-    height: 100%;
+    height: max(100%, 2rem);
     padding-left: 1rem;
     outline: none;
     border: 3px solid var(--color-darker);
@@ -429,7 +437,7 @@ footer {
 
 footer > span,
 footer > a {
-    height: 80%;
+    height: 90%;
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -446,3 +454,4 @@ footer > a:hover {
     color: var(--color-highlight);
     fill: var(--color-highlight);
 }
+
