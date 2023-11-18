@@ -111,11 +111,8 @@
         font-size: 25px;
     }
     main {
-        height: 65%;
+        height: 60%;
     }
-}
-
-@media (max-width: 580px) {
     .copyright-text {
         display: none;
     }
