@@ -1,0 +1,345 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    /* Variables */
+    --color-highlight: #dcc48e;
+    --color-light: #eaefd3;
+    --color-medium: #b3c0a4;
+    --color-medium2: #ab6701;
+    --color-darker: #505168;
+    --color-dark: #27233a;
+    --color-border: rgba(153, 153, 153, 0.7);
+}
+
+.icon-container {
+    max-height: 100%;
+    aspect-ratio: 1/1;
+}
+
+.icon {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(45deg, transparent 49%, var(--color-darker) 49% 51%, transparent 51%) , linear-gradient(-45deg, transparent 49%, var(--color-darker) 49% 51%, transparent 51%);
+    background-size: 4em 4em;
+    background-color: var(--color-dark);
+    border: 3px solid var(--color-darker);
+}
+
+body {
+    width: 65%;
+    height: 100%;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    background-color: var(--color-dark);
+    border-left: 3px solid var(--color-darker);
+    border-right: 3px solid var(--color-darker);
+}
+
+header {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    padding-right: calc(20px + 2vh);
+    border-bottom: 3px solid var(--color-border);
+}
+.logo {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.logo > .logo-name {
+    font-size: 70px;
+    color: var(--color-light);
+}
+
+.logo > .logo-slogan {
+    font-size: 30px;
+    color: var(--color-medium);
+}
+
+.logo > .logo-slogan > a {
+    color: var(--color-medium2);
+    text-decoration: none;
+}
+
+header > ul {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1vw;
+    list-style-type: none;
+}
+
+header > ul > li {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+}
+
+header > ul > li > button {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .2rem;
+    outline: 0;
+    border: 3px solid var(--color-darker);
+    border-radius: 20px;
+    color: var(--color-medium);
+    background: transparent;
+    font-size: 30px;
+    transition: border-color 250ms;
+}
+
+header > ul > li > button:hover {
+    border-color: var(--color-medium);
+    
+}
+
+main {
+    width: 100%;
+    height: 75%;
+}
+
+.page.home {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1vw;
+}
+
+.page.home > * {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh;
+}
+
+.page.home .rules,
+.page.home .gameSettings,
+.page.home > .right{
+    padding: 1rem;
+    border: 3px solid var(--color-border);
+    border-radius: 20px;
+    color: var(--color-medium);
+    font-family: 'Arial',sans-serif;
+    font-size: 1.5rem;
+}
+
+.page.home .title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: var(--color-highlight);
+    font-family: 'Times New Roman',serif;
+    font-size: 2rem;
+}
+
+.page.home .gameSettings {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.page.home .setting {
+    width: 100%;
+    height: 80%; 
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.page.home .setting > input {
+    height: 100%;
+    padding-left: 1rem;
+    outline: none;
+    border: 3px solid var(--color-darker);
+    border-radius: 10px;
+    color: var(--color-highlight);
+    background-color: transparent;
+    font-size: 1.5rem;
+}
+
+.page.home .startGame{
+    padding: .8rem;
+    border: 3px solid var(--color-medium2);
+    border-radius: 20px;
+    color: var(--color-light);
+    background-color: transparent;
+    font-size: 1.5rem;
+    font-weight: bold;
+    user-select: none;
+    transition: border-color 250ms; 
+}
+
+.page.home .startGame:hover {
+    border-color: var(--color-highlight);
+    cursor: pointer;
+}
+
+.page.home .rules {
+    flex-grow: 1;
+}
+
+.page.home .games {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    position: relative;
+}
+
+.page.home .games > .game:first-child {
+    position: fixed;
+    background-color: var(--color-dark);
+    top: 0;
+  }
+
+.page.home .games::-webkit-scrollbar {
+    width: 15px;
+    background: var(--color-darker);
+}
+.page.home .games::-webkit-scrollbar-thumb {
+    background: var(--color-medium2);
+    border: 2px solid var(--color-dark);
+}
+.page.home .games::-webkit-scrollbar-thumb:active {
+    background: var(--color-highlight);
+}
+
+.page.home > .right {
+    gap: 0;
+}
+
+.page.home > .right > .game {
+   padding-right: 2rem !important;
+}
+
+.page.home > .right > .title{
+    margin-bottom: 1.5rem;
+}
+
+.page.home .right .game {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-top: 1.5px solid var(--color-border);
+    border-left: 3px solid var(--color-border);
+    border-right: 3px solid var(--color-border);
+    border-bottom: 3px solid var(--color-border);
+    user-select: none;
+}
+
+.page.home .right .game:first-child {
+    position: sticky;
+}
+
+.page.home .right .game > * {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem;
+}
+
+.page.home .right .game > *:not(:last-child){
+    border-right: 3px solid var(--color-border);
+}
+
+.page.home .right .game > .timestamp {
+    width: 40%;
+    flex-direction: column;
+}
+
+.page.home .right .game > .stats {
+    width: 60%;
+    justify-content: space-evenly;
+}
+.page.home .right .game > .stats > * {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+.page.home .right .game > .stats > * > * {
+    display: flex;
+
+    justify-content: center;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 2vw;
+}
+
+.wrapper > button {
+    width: 25%;
+    height: 70%;
+    border: 3px solid ;
+    border-radius: 20px;
+    background: transparent;
+    outline: none;
+    transition: transform 200ms;
+}
+
+.wrapper > button:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    flex-grow: 1;
+    height: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .6vh;
+    border-top: 3px solid var(--color-border);
+    color: var(--color-medium);
+    font-family: 'Arial', sans-serif;
+    font-size: 1.4rem;
+}
+
+footer > span,
+footer > a {
+    height: 90%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--color-medium);
+    fill: var(--color-medium);
+}
+
+footer > a {
+    text-decoration: none;
+    transition: color 250ms,fill 250ms;
+}
+
+footer > a:hover {
+    color: var(--color-highlight);
+    fill: var(--color-highlight);
+}
+
