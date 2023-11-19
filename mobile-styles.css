@@ -73,12 +73,9 @@
         height: unset;
         margin-bottom: 1rem;
     }
-    .page.home > .left > .game {
+    .page.home .gameSettings {
         height: 30% !important ;
         gap: 2rem !important;
-    }
-    .page.home > .left .game .content {
-        height: 10vh !important;
     }
     .page.home > .left > * {
         padding: 2rem !important;
