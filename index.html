@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="./styles/basic-styles.css">
     <link rel="stylesheet" href="./styles/page-home.css">
     <link rel="stylesheet" href="./styles/page-game.css">
     <link rel="stylesheet" href="./styles/mobile-styles.css">
+
+    <script src="js/ui.js" defer></script>
+
     <title>Rock paper scissors</title>
 </head>
 <body>
@@ -16,435 +20,433 @@
             <span class="logo-slogan">A <a href="https://www.theodinproject.com/paths/foundations/courses/foundations"><em>The Odin Project - Foundations</em></a> exercise.</span>
         </div>
         <ul class="navButtons">
-            <li><button id="newGame">New game</button></li>
-            <li><button id="home">Home</button></li>
+            <li><button id="newGame_btn">New game</button></li>
+            <li><button id="home_btn">Home</button></li>
         </ul>
     </header>
     <main>
-        <section class="page home">
-            <div class="left">
-                <div class="box gameSettings">
-                    <h2 class="title">Game settings</h2>
-                    <div class="setting">
-                        <label for="roundsToWin">Score to win</label>
-                        <input type="number" name="roundsToWin" id="roundsToWin" min="1" max="100" value="5">
+        <div class="pages">
+            <section class="page home currentPage">
+                <div class="left">
+                    <div class="box gameSettings">
+                        <h2 class="title">Game settings</h2>
+                        <div class="setting">
+                            <label for="roundsToWin">Score to win</label>
+                            <input type="number" name="roundsToWin" id="roundsToWin" min="1" max="100" value="5">
+                        </div>
                     </div>
+                    <button class="startGame">Start game</button>
+                    <div class="box rules">
+                        <h2 class="title">Rules</h2>
+                        <p class="intro">Rock Paper Scissors is a game where two players simultaneously choose one of three objects - rock, paper, or scissors - to determine a winner.</p>
+                        <h3 class="title">Who wins?</h3>
+                        <!-- include img of what beats what here-->
+                    </div>            
                 </div>
-                <button class="startGame">Start game</button>
-                <div class="box rules">
-                    <h2 class="title">Rules</h2>
-                    <p class="intro">Rock Paper Scissors is a game where two players simultaneously choose one of three objects - rock, paper, or scissors - to determine a winner.</p>
-                    <h3 class="title">Who wins?</h3>
-                    <!-- include img of what beats what here-->
-                </div>            
-            </div>
-            <div class="right history">
-                <div class="title">
-                    <h2>History</h2>
-                </div>
-                
-                <div class="games">
-                    <div class="game">
-                        <span class="timestamp">Date</span>
-                        <span class="stats">Stats</span>
+                <div class="right history">
+                    <div class="title">
+                        <h2>History</h2>
                     </div>
-                    <div class="game">
-                        <span class="timestamp">
-                            <div class="date">12.11.2023</div>
-                            <div class="time">4:51 PM</div>
-                        </span>
-                        <span class="stats">
-                            <span class="winner" title="winner">
-                                <div class="player-icon">🏆</div>
-                                <div class="winner-name">💻</div>
-                            </span>
-                            <span class="player" title="player score">
-                                <div class="player-icon">👤</div>
-                                <div class="player-score">3</div>
-                            </span>
-                            <span class="computer" title="computer score">
-                                <div class="computer-icon">💻</div>
-                                <div class="computer-score">5</div>
-                            </span>
-                            <span class="ties" title="ties">
-                                <div class="ties-icon">🤝</div>
-                                <div class="ties-score">2</div>
-                            </span>
-                            <span class="totalgames" title="total games played">
-                                <div class="totalgames-icon">🕹</div>
-                                <div class="totalgames-score">10</div>
-                            </span>
-                        </span>
-                    </div>
-                    <div class="game">
-                        <span class="timestamp">
-                            <div class="date">12.11.2023</div>
-                            <div class="time">4:51 PM</div>
-                        </span>
-                        <span class="stats">
-                            <span class="winner" title="winner">
-                                <div class="player-icon">🏆</div>
-                                <div class="winner-name">💻</div>
-                            </span>
-                            <span class="player" title="player score">
-                                <div class="player-icon">👤</div>
-                                <div class="player-score">3</div>
-                            </span>
-                            <span class="computer" title="computer score">
-                                <div class="computer-icon">💻</div>
-                                <div class="computer-score">5</div>
-                            </span>
-                            <span class="ties" title="ties">
-                                <div class="ties-icon">🤝</div>
-                                <div class="ties-score">2</div>
-                            </span>
-                            <span class="totalgames" title="total games played">
-                                <div class="totalgames-icon">🕹</div>
-                                <div class="totalgames-score">10</div>
-                            </span>
-                        </span>
-                    </div>
-                    <div class="game">
-                        <span class="timestamp">
-                            <div class="date">12.11.2023</div>
-                            <div class="time">4:51 PM</div>
-                        </span>
-                        <span class="stats">
-                            <span class="winner" title="winner">
-                                <div class="player-icon">🏆</div>
-                                <div class="winner-name">💻</div>
-                            </span>
-                            <span class="player" title="player score">
-                                <div class="player-icon">👤</div>
-                                <div class="player-score">3</div>
-                            </span>
-                            <span class="computer" title="computer score">
-                                <div class="computer-icon">💻</div>
-                                <div class="computer-score">5</div>
-                            </span>
-                            <span class="ties" title="ties">
-                                <div class="ties-icon">🤝</div>
-                                <div class="ties-score">2</div>
-                            </span>
-                            <span class="totalgames" title="total games played">
-                                <div class="totalgames-icon">🕹</div>
-                                <div class="totalgames-score">10</div>
-                            </span>
-                        </span>
-                    </div>
-                    <div class="game">
-                        <span class="timestamp">
-                            <div class="date">12.11.2023</div>
-                            <div class="time">4:51 PM</div>
-                        </span>
-                        <span class="stats">
-                            <span class="winner" title="winner">
-                                <div class="player-icon">🏆</div>
-                                <div class="winner-name">💻</div>
-                            </span>
-                            <span class="player" title="player score">
-                                <div class="player-icon">👤</div>
-                                <div class="player-score">3</div>
-                            </span>
-                            <span class="computer" title="computer score">
-                                <div class="computer-icon">💻</div>
-                                <div class="computer-score">5</div>
-                            </span>
-                            <span class="ties" title="ties">
-                                <div class="ties-icon">🤝</div>
-                                <div class="ties-score">2</div>
-                            </span>
-                            <span class="totalgames" title="total games played">
-                                <div class="totalgames-icon">🕹</div>
-                                <div class="totalgames-score">10</div>
-                            </span>
-                        </span>
-                    </div>
-                    <div class="game">
-                        <span class="timestamp">
-                            <div class="date">12.11.2023</div>
-                            <div class="time">4:51 PM</div>
-                        </span>
-                        <span class="stats">
-                            <span class="winner" title="winner">
-                                <div class="player-icon">🏆</div>
-                                <div class="winner-name">💻</div>
-                            </span>
-                            <span class="player" title="player score">
-                                <div class="player-icon">👤</div>
-                                <div class="player-score">3</div>
-                            </span>
-                            <span class="computer" title="computer score">
-                                <div class="computer-icon">💻</div>
-                                <div class="computer-score">5</div>
-                            </span>
-                            <span class="ties" title="ties">
-                                <div class="ties-icon">🤝</div>
-                                <div class="ties-score">2</div>
-                            </span>
-                            <span class="totalgames" title="total games played">
-                                <div class="totalgames-icon">🕹</div>
-                                <div class="totalgames-score">10</div>
-                            </span>
-                        </span>
-                    </div>
-                    <div class="game">
-                        <span class="timestamp">
-                            <div class="date">12.11.2023</div>
-                            <div class="time">4:51 PM</div>
-                        </span>
-                        <span class="stats">
-                            <span class="winner" title="winner">
-                                <div class="player-icon">🏆</div>
-                                <div class="winner-name">💻</div>
-                            </span>
-                            <span class="player" title="player score">
-                                <div class="player-icon">👤</div>
-                                <div class="player-score">3</div>
-                            </span>
-                            <span class="computer" title="computer score">
-                                <div class="computer-icon">💻</div>
-                                <div class="computer-score">5</div>
-                            </span>
-                            <span class="ties" title="ties">
-                                <div class="ties-icon">🤝</div>
-                                <div class="ties-score">2</div>
-                            </span>
-                            <span class="totalgames" title="total games played">
-                                <div class="totalgames-icon">🕹</div>
-                                <div class="totalgames-score">10</div>
-                            </span>
-                        </span>
-                    </div>
-                    <div class="game">
-                        <span class="timestamp">
-                            <div class="date">12.11.2023</div>
-                            <div class="time">4:51 PM</div>
-                        </span>
-                        <span class="stats">
-                            <span class="winner" title="winner">
-                                <div class="player-icon">🏆</div>
-                                <div class="winner-name">💻</div>
-                            </span>
-                            <span class="player" title="player score">
-                                <div class="player-icon">👤</div>
-                                <div class="player-score">3</div>
-                            </span>
-                            <span class="computer" title="computer score">
-                                <div class="computer-icon">💻</div>
-                                <div class="computer-score">5</div>
-                            </span>
-                            <span class="ties" title="ties">
-                                <div class="ties-icon">🤝</div>
-                                <div class="ties-score">2</div>
-                            </span>
-                            <span class="totalgames" title="total games played">
-                                <div class="totalgames-icon">🕹</div>
-                                <div class="totalgames-score">10</div>
-                            </span>
-                        </span>
-                    </div>
-                    <div class="game">
-                        <span class="timestamp">
-                            <div class="date">12.11.2023</div>
-                            <div class="time">4:51 PM</div>
-                        </span>
-                        <span class="stats">
-                            <span class="winner" title="winner">
-                                <div class="player-icon">🏆</div>
-                                <div class="winner-name">💻</div>
-                            </span>
-                            <span class="player" title="player score">
-                                <div class="player-icon">👤</div>
-                                <div class="player-score">3</div>
-                            </span>
-                            <span class="computer" title="computer score">
-                                <div class="computer-icon">💻</div>
-                                <div class="computer-score">5</div>
-                            </span>
-                            <span class="ties" title="ties">
-                                <div class="ties-icon">🤝</div>
-                                <div class="ties-score">2</div>
-                            </span>
-                            <span class="totalgames" title="total games played">
-                                <div class="totalgames-icon">🕹</div>
-                                <div class="totalgames-score">10</div>
-                            </span>
-                        </span>
-                    </div>
-                    <div class="game">
-                        <span class="timestamp">
-                            <div class="date">12.11.2023</div>
-                            <div class="time">4:51 PM</div>
-                        </span>
-                        <span class="stats">
-                            <span class="winner" title="winner">
-                                <div class="player-icon">🏆</div>
-                                <div class="winner-name">💻</div>
-                            </span>
-                            <span class="player" title="player score">
-                                <div class="player-icon">👤</div>
-                                <div class="player-score">3</div>
-                            </span>
-                            <span class="computer" title="computer score">
-                                <div class="computer-icon">💻</div>
-                                <div class="computer-score">5</div>
-                            </span>
-                            <span class="ties" title="ties">
-                                <div class="ties-icon">🤝</div>
-                                <div class="ties-score">2</div>
-                            </span>
-                            <span class="totalgames" title="total games played">
-                                <div class="totalgames-icon">🕹</div>
-                                <div class="totalgames-score">10</div>
-                            </span>
-                        </span>
-                    </div>
-                    <div class="game">
-                        <span class="timestamp">
-                            <div class="date">12.11.2023</div>
-                            <div class="time">4:51 PM</div>
-                        </span>
-                        <span class="stats">
-                            <span class="winner" title="winner">
-                                <div class="player-icon">🏆</div>
-                                <div class="winner-name">💻</div>
-                            </span>
-                            <span class="player" title="player score">
-                                <div class="player-icon">👤</div>
-                                <div class="player-score">3</div>
-                            </span>
-                            <span class="computer" title="computer score">
-                                <div class="computer-icon">💻</div>
-                                <div class="computer-score">5</div>
-                            </span>
-                            <span class="ties" title="ties">
-                                <div class="ties-icon">🤝</div>
-                                <div class="ties-score">2</div>
-                            </span>
-                            <span class="totalgames" title="total games played">
-                                <div class="totalgames-icon">🕹</div>
-                                <div class="totalgames-score">10</div>
-                            </span>
-                        </span>
-                    </div>
-                    <div class="game">
-                        <span class="timestamp">
-                            <div class="date">12.11.2023</div>
-                            <div class="time">4:51 PM</div>
-                        </span>
-                        <span class="stats">
-                            <span class="winner" title="winner">
-                                <div class="player-icon">🏆</div>
-                                <div class="winner-name">💻</div>
-                            </span>
-                            <span class="player" title="player score">
-                                <div class="player-icon">👤</div>
-                                <div class="player-score">3</div>
-                            </span>
-                            <span class="computer" title="computer score">
-                                <div class="computer-icon">💻</div>
-                                <div class="computer-score">5</div>
-                            </span>
-                            <span class="ties" title="ties">
-                                <div class="ties-icon">🤝</div>
-                                <div class="ties-score">2</div>
-                            </span>
-                            <span class="totalgames" title="total games played">
-                                <div class="totalgames-icon">🕹</div>
-                                <div class="totalgames-score">10</div>
-                            </span>
-                        </span>
-                    </div>
-                    <div class="game">
-                        <span class="timestamp">
-                            <div class="date">12.11.2023</div>
-                            <div class="time">4:51 PM</div>
-                        </span>
-                        <span class="stats">
-                            <span class="winner" title="winner">
-                                <div class="player-icon">🏆</div>
-                                <div class="winner-name">💻</div>
-                            </span>
-                            <span class="player" title="player score">
-                                <div class="player-icon">👤</div>
-                                <div class="player-score">3</div>
-                            </span>
-                            <span class="computer" title="computer score">
-                                <div class="computer-icon">💻</div>
-                                <div class="computer-score">5</div>
-                            </span>
-                            <span class="ties" title="ties">
-                                <div class="ties-icon">🤝</div>
-                                <div class="ties-score">2</div>
-                            </span>
-                            <span class="totalgames" title="total games played">
-                                <div class="totalgames-icon">🕹</div>
-                                <div class="totalgames-score">10</div>
-                            </span>
-                        </span>
-                    </div>
-                    <div class="game">
-                        <span class="timestamp">
-                            <div class="date">12.11.2023</div>
-                            <div class="time">4:51 PM</div>
-                        </span>
-                        <span class="stats">
-                            <span class="winner" title="winner">
-                                <div class="player-icon">🏆</div>
-                                <div class="winner-name">💻</div>
-                            </span>
-                            <span class="player" title="player score">
-                                <div class="player-icon">👤</div>
-                                <div class="player-score">3</div>
-                            </span>
-                            <span class="computer" title="computer score">
-                                <div class="computer-icon">💻</div>
-                                <div class="computer-score">5</div>
-                            </span>
-                            <span class="ties" title="ties">
-                                <div class="ties-icon">🤝</div>
-                                <div class="ties-score">2</div>
-                            </span>
-                            <span class="totalgames" title="total games played">
-                                <div class="totalgames-icon">🕹</div>
-                                <div class="totalgames-score">10</div>
-                            </span>
-                        </span>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-        <!-- <section class="page game">
-            <div class="score">
-
-            </div>
-            <div class="wrapper">
-                <button class="choice" id="rock">
-                    <div class="icon-container">
+                    
+                    <div class="games">
+                        <div class="game">
+                            <span class="timestamp">Date</span>
+                            <span class="stats">Stats</span>
+                        </div>
+                        <div class="game">
+                            <span class="timestamp">
+                                <div class="date">12.11.2023</div>
+                                <div class="time">4:51 PM</div>
+                            </span>
+                            <span class="stats">
+                                <span class="winner" title="winner">
+                                    <div class="player-icon">🏆</div>
+                                    <div class="winner-name">💻</div>
+                                </span>
+                                <span class="player" title="player score">
+                                    <div class="player-icon">👤</div>
+                                    <div class="player-score">3</div>
+                                </span>
+                                <span class="computer" title="computer score">
+                                    <div class="computer-icon">💻</div>
+                                    <div class="computer-score">5</div>
+                                </span>
+                                <span class="ties" title="ties">
+                                    <div class="ties-icon">🤝</div>
+                                    <div class="ties-score">2</div>
+                                </span>
+                                <span class="totalgames" title="total games played">
+                                    <div class="totalgames-icon">🕹</div>
+                                    <div class="totalgames-score">10</div>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="game">
+                            <span class="timestamp">
+                                <div class="date">12.11.2023</div>
+                                <div class="time">4:51 PM</div>
+                            </span>
+                            <span class="stats">
+                                <span class="winner" title="winner">
+                                    <div class="player-icon">🏆</div>
+                                    <div class="winner-name">💻</div>
+                                </span>
+                                <span class="player" title="player score">
+                                    <div class="player-icon">👤</div>
+                                    <div class="player-score">3</div>
+                                </span>
+                                <span class="computer" title="computer score">
+                                    <div class="computer-icon">💻</div>
+                                    <div class="computer-score">5</div>
+                                </span>
+                                <span class="ties" title="ties">
+                                    <div class="ties-icon">🤝</div>
+                                    <div class="ties-score">2</div>
+                                </span>
+                                <span class="totalgames" title="total games played">
+                                    <div class="totalgames-icon">🕹</div>
+                                    <div class="totalgames-score">10</div>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="game">
+                            <span class="timestamp">
+                                <div class="date">12.11.2023</div>
+                                <div class="time">4:51 PM</div>
+                            </span>
+                            <span class="stats">
+                                <span class="winner" title="winner">
+                                    <div class="player-icon">🏆</div>
+                                    <div class="winner-name">💻</div>
+                                </span>
+                                <span class="player" title="player score">
+                                    <div class="player-icon">👤</div>
+                                    <div class="player-score">3</div>
+                                </span>
+                                <span class="computer" title="computer score">
+                                    <div class="computer-icon">💻</div>
+                                    <div class="computer-score">5</div>
+                                </span>
+                                <span class="ties" title="ties">
+                                    <div class="ties-icon">🤝</div>
+                                    <div class="ties-score">2</div>
+                                </span>
+                                <span class="totalgames" title="total games played">
+                                    <div class="totalgames-icon">🕹</div>
+                                    <div class="totalgames-score">10</div>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="game">
+                            <span class="timestamp">
+                                <div class="date">12.11.2023</div>
+                                <div class="time">4:51 PM</div>
+                            </span>
+                            <span class="stats">
+                                <span class="winner" title="winner">
+                                    <div class="player-icon">🏆</div>
+                                    <div class="winner-name">💻</div>
+                                </span>
+                                <span class="player" title="player score">
+                                    <div class="player-icon">👤</div>
+                                    <div class="player-score">3</div>
+                                </span>
+                                <span class="computer" title="computer score">
+                                    <div class="computer-icon">💻</div>
+                                    <div class="computer-score">5</div>
+                                </span>
+                                <span class="ties" title="ties">
+                                    <div class="ties-icon">🤝</div>
+                                    <div class="ties-score">2</div>
+                                </span>
+                                <span class="totalgames" title="total games played">
+                                    <div class="totalgames-icon">🕹</div>
+                                    <div class="totalgames-score">10</div>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="game">
+                            <span class="timestamp">
+                                <div class="date">12.11.2023</div>
+                                <div class="time">4:51 PM</div>
+                            </span>
+                            <span class="stats">
+                                <span class="winner" title="winner">
+                                    <div class="player-icon">🏆</div>
+                                    <div class="winner-name">💻</div>
+                                </span>
+                                <span class="player" title="player score">
+                                    <div class="player-icon">👤</div>
+                                    <div class="player-score">3</div>
+                                </span>
+                                <span class="computer" title="computer score">
+                                    <div class="computer-icon">💻</div>
+                                    <div class="computer-score">5</div>
+                                </span>
+                                <span class="ties" title="ties">
+                                    <div class="ties-icon">🤝</div>
+                                    <div class="ties-score">2</div>
+                                </span>
+                                <span class="totalgames" title="total games played">
+                                    <div class="totalgames-icon">🕹</div>
+                                    <div class="totalgames-score">10</div>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="game">
+                            <span class="timestamp">
+                                <div class="date">12.11.2023</div>
+                                <div class="time">4:51 PM</div>
+                            </span>
+                            <span class="stats">
+                                <span class="winner" title="winner">
+                                    <div class="player-icon">🏆</div>
+                                    <div class="winner-name">💻</div>
+                                </span>
+                                <span class="player" title="player score">
+                                    <div class="player-icon">👤</div>
+                                    <div class="player-score">3</div>
+                                </span>
+                                <span class="computer" title="computer score">
+                                    <div class="computer-icon">💻</div>
+                                    <div class="computer-score">5</div>
+                                </span>
+                                <span class="ties" title="ties">
+                                    <div class="ties-icon">🤝</div>
+                                    <div class="ties-score">2</div>
+                                </span>
+                                <span class="totalgames" title="total games played">
+                                    <div class="totalgames-icon">🕹</div>
+                                    <div class="totalgames-score">10</div>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="game">
+                            <span class="timestamp">
+                                <div class="date">12.11.2023</div>
+                                <div class="time">4:51 PM</div>
+                            </span>
+                            <span class="stats">
+                                <span class="winner" title="winner">
+                                    <div class="player-icon">🏆</div>
+                                    <div class="winner-name">💻</div>
+                                </span>
+                                <span class="player" title="player score">
+                                    <div class="player-icon">👤</div>
+                                    <div class="player-score">3</div>
+                                </span>
+                                <span class="computer" title="computer score">
+                                    <div class="computer-icon">💻</div>
+                                    <div class="computer-score">5</div>
+                                </span>
+                                <span class="ties" title="ties">
+                                    <div class="ties-icon">🤝</div>
+                                    <div class="ties-score">2</div>
+                                </span>
+                                <span class="totalgames" title="total games played">
+                                    <div class="totalgames-icon">🕹</div>
+                                    <div class="totalgames-score">10</div>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="game">
+                            <span class="timestamp">
+                                <div class="date">12.11.2023</div>
+                                <div class="time">4:51 PM</div>
+                            </span>
+                            <span class="stats">
+                                <span class="winner" title="winner">
+                                    <div class="player-icon">🏆</div>
+                                    <div class="winner-name">💻</div>
+                                </span>
+                                <span class="player" title="player score">
+                                    <div class="player-icon">👤</div>
+                                    <div class="player-score">3</div>
+                                </span>
+                                <span class="computer" title="computer score">
+                                    <div class="computer-icon">💻</div>
+                                    <div class="computer-score">5</div>
+                                </span>
+                                <span class="ties" title="ties">
+                                    <div class="ties-icon">🤝</div>
+                                    <div class="ties-score">2</div>
+                                </span>
+                                <span class="totalgames" title="total games played">
+                                    <div class="totalgames-icon">🕹</div>
+                                    <div class="totalgames-score">10</div>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="game">
+                            <span class="timestamp">
+                                <div class="date">12.11.2023</div>
+                                <div class="time">4:51 PM</div>
+                            </span>
+                            <span class="stats">
+                                <span class="winner" title="winner">
+                                    <div class="player-icon">🏆</div>
+                                    <div class="winner-name">💻</div>
+                                </span>
+                                <span class="player" title="player score">
+                                    <div class="player-icon">👤</div>
+                                    <div class="player-score">3</div>
+                                </span>
+                                <span class="computer" title="computer score">
+                                    <div class="computer-icon">💻</div>
+                                    <div class="computer-score">5</div>
+                                </span>
+                                <span class="ties" title="ties">
+                                    <div class="ties-icon">🤝</div>
+                                    <div class="ties-score">2</div>
+                                </span>
+                                <span class="totalgames" title="total games played">
+                                    <div class="totalgames-icon">🕹</div>
+                                    <div class="totalgames-score">10</div>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="game">
+                            <span class="timestamp">
+                                <div class="date">12.11.2023</div>
+                                <div class="time">4:51 PM</div>
+                            </span>
+                            <span class="stats">
+                                <span class="winner" title="winner">
+                                    <div class="player-icon">🏆</div>
+                                    <div class="winner-name">💻</div>
+                                </span>
+                                <span class="player" title="player score">
+                                    <div class="player-icon">👤</div>
+                                    <div class="player-score">3</div>
+                                </span>
+                                <span class="computer" title="computer score">
+                                    <div class="computer-icon">💻</div>
+                                    <div class="computer-score">5</div>
+                                </span>
+                                <span class="ties" title="ties">
+                                    <div class="ties-icon">🤝</div>
+                                    <div class="ties-score">2</div>
+                                </span>
+                                <span class="totalgames" title="total games played">
+                                    <div class="totalgames-icon">🕹</div>
+                                    <div class="totalgames-score">10</div>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="game">
+                            <span class="timestamp">
+                                <div class="date">12.11.2023</div>
+                                <div class="time">4:51 PM</div>
+                            </span>
+                            <span class="stats">
+                                <span class="winner" title="winner">
+                                    <div class="player-icon">🏆</div>
+                                    <div class="winner-name">💻</div>
+                                </span>
+                                <span class="player" title="player score">
+                                    <div class="player-icon">👤</div>
+                                    <div class="player-score">3</div>
+                                </span>
+                                <span class="computer" title="computer score">
+                                    <div class="computer-icon">💻</div>
+                                    <div class="computer-score">5</div>
+                                </span>
+                                <span class="ties" title="ties">
+                                    <div class="ties-icon">🤝</div>
+                                    <div class="ties-score">2</div>
+                                </span>
+                                <span class="totalgames" title="total games played">
+                                    <div class="totalgames-icon">🕹</div>
+                                    <div class="totalgames-score">10</div>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="game">
+                            <span class="timestamp">
+                                <div class="date">12.11.2023</div>
+                                <div class="time">4:51 PM</div>
+                            </span>
+                            <span class="stats">
+                                <span class="winner" title="winner">
+                                    <div class="player-icon">🏆</div>
+                                    <div class="winner-name">💻</div>
+                                </span>
+                                <span class="player" title="player score">
+                                    <div class="player-icon">👤</div>
+                                    <div class="player-score">3</div>
+                                </span>
+                                <span class="computer" title="computer score">
+                                    <div class="computer-icon">💻</div>
+                                    <div class="computer-score">5</div>
+                                </span>
+                                <span class="ties" title="ties">
+                                    <div class="ties-icon">🤝</div>
+                                    <div class="ties-score">2</div>
+                                </span>
+                                <span class="totalgames" title="total games played">
+                                    <div class="totalgames-icon">🕹</div>
+                                    <div class="totalgames-score">10</div>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="game">
+                            <span class="timestamp">
+                                <div class="date">12.11.2023</div>
+                                <div class="time">4:51 PM</div>
+                            </span>
+                            <span class="stats">
+                                <span class="winner" title="winner">
+                                    <div class="player-icon">🏆</div>
+                                    <div class="winner-name">💻</div>
+                                </span>
+                                <span class="player" title="player score">
+                                    <div class="player-icon">👤</div>
+                                    <div class="player-score">3</div>
+                                </span>
+                                <span class="computer" title="computer score">
+                                    <div class="computer-icon">💻</div>
+                                    <div class="computer-score">5</div>
+                                </span>
+                                <span class="ties" title="ties">
+                                    <div class="ties-icon">🤝</div>
+                                    <div class="ties-score">2</div>
+                                </span>
+                                <span class="totalgames" title="total games played">
+                                    <div class="totalgames-icon">🕹</div>
+                                    <div class="totalgames-score">10</div>
+                                </span>
+                            </span>
+                        </div>
     
                     </div>
-                    <span>Rock</span>
-                </button>
-                <button class="choice" id="paper">
-                    <div class="icon-container">
-                        
-                    </div>
-                    <span>Paper</span>
-                </button>
-                <button class="choice" id="scissors">
-                    <div class="icon-container">
-                        
-                    </div>
-                    <span>Scissors</span>
-                </button>
-            </div>
-        </section>
-        <section class="page summary">
-
-        </section> -->
-     
+                </div>
+            </section>
+            <section class="page game">
+                <div class="score">
+    
+                </div>
+                <div class="wrapper">
+                    <button class="choice" id="rock">
+                        <div class="icon-container">
+        
+                        </div>
+                        <span>Rock</span>
+                    </button>
+                    <button class="choice" id="paper">
+                        <div class="icon-container">
+                            
+                        </div>
+                        <span>Paper</span>
+                    </button>
+                    <button class="choice" id="scissors">
+                        <div class="icon-container">
+                            
+                        </div>
+                        <span>Scissors</span>
+                    </button>
+                </div>
+            </section>
+        </div>
     </main>
     <footer>
         <a href="https://github.com/thycooon" target="_blank">
